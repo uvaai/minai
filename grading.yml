@@ -21,7 +21,13 @@ templates:
         calculation: points
         is_test: true
         hide_subgrades: true
-    5: &manual_float
+    5: &check_off
+        type: pass
+        subgrades:
+            done: boolean
+        calculation: done
+        hide_calculated: true
+    6: &manual_float
         type: float
         subgrades:
             points: float
