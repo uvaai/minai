@@ -1,0 +1,3 @@
+python:
+    remote: https://github.com/spcourse/python
+    branch: main

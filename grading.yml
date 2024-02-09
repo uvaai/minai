@@ -1,0 +1,58 @@
+templates:
+    1: &automatic
+        type: pass
+        subgrades:
+            done: boolean
+        automatic:
+            done: -1
+        calculation: done
+        auto_publish: true
+        hide_calculated: true
+        hide_subgrades: true
+    3: &manual
+        type: float
+        subgrades:
+            points: integer
+        calculation: points
+    4: &test
+        type: float
+        subgrades:
+            points: integer
+        calculation: points
+        is_test: true
+        hide_subgrades: true
+    5: &manual_float
+        type: float
+        subgrades:
+            points: float
+        calculation: points
+
+grades:
+    week1: *check_off
+    week2: *check_off
+    week3: *check_off
+    week4: *check_off
+    week5: *check_off
+    week6: *check_off
+    week7: *check_off
+    late_day1: *automatic
+    late_day2: *automatic
+
+attendance:
+  show_progress: true
+  show_overview: true
+  submits:
+    week1: 0
+    week2: 0
+    week3: 0
+    week4: 0
+    week5: 0
+    week6: 0
+    week7: 0
+
+late_days:
+    show_progress: true
+    show_overview: true
+    submits:
+        late_day1: 0
+        late_day2: 0
