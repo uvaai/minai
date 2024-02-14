@@ -8,10 +8,10 @@ Minor AI:
         Step 1 install Miniconda: /python/en/installing/miniconda-win
         Step 2 install Pulsar: /python/en/installing/pulsar
         Step 3 command line interface: /python/en/installing/cli-win
-        Step 4 install Conda environment: /python/en/installing/conda-env-ml1-win
+        Step 4 install Conda environment: /python/en/installing/conda-env-minai-win
     Install Python on MacOS:
         Step 0 intro: /python/en/installing/intro
         Step 1 install Miniconda: /python/en/installing/miniconda-mac
         Step 2 install Pulsar: /python/en/installing/pulsar
         Step 3 command line interface: /python/en/installing/cli-mac
-        Step 4 install Conda environment: /python/en/installing/conda-env-ml1-mac
+        Step 4 install Conda environment: /python/en/installing/conda-env-minai-mac
