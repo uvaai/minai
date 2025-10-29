@@ -41,8 +41,8 @@ grades:
     week5: *check_off
     week6: *check_off
     week7: *check_off
-    late_day1: *automatic
-    late_day2: *automatic
+    late_day1v2: *automatic
+    late_day2v2: *automatic
 
 attendance:
   show_progress: true
@@ -60,5 +60,5 @@ late_days:
     show_progress: true
     show_overview: true
     submits:
-        late_day1: 0
-        late_day2: 0
+        late_day1v2: 0
+        late_day2v2: 0
