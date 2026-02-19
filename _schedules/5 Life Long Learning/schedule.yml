@@ -3,7 +3,7 @@ Minor AI:
     Requesting late days:
         Late day 1: /late_days/late_day1/
         Late day 2: /late_days/late_day2/
-    Install python:
+    Install Python:
         Intro: /python/en/installing/intro
     Install Python on Windows:
         Step 1 install Miniconda: /python/en/installing/miniconda-win
