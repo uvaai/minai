@@ -1,3 +1,6 @@
 python:
     remote: https://github.com/spcourse/python
     branch: main
+integrals:
+    remote: https://github.com/spcourse/integrals.git
+    branch: main
