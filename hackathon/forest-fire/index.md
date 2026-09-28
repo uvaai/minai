@@ -6,7 +6,7 @@ forest will be represented as a rectangular grid, where each cell will contain a
 burning tree or an empty space. Empty spaces might grow new trees, and burning trees might cause
 neighbouring trees to catch fire. During the simulation you'll update the forest at each timestep
 to see the effect of these rules evolve. For the last part you'll investigate the effectiveness
-of different types of fire breaks on the survival of the forest. 
+of different types of fire breaks on the survival of the forest.
 
 ## Part 0: Getting started
 
@@ -16,7 +16,7 @@ your `(minai)` environment by running the following command in your terminal:
     pip install pygame
 
 We will be using *Pygame* to visualize the forest on screen during the simulation. The *Pygame*
-code is already given in the starting file, but it good to have a basic idea of what this part
+code is already given in the starting file, but it is good to have a basic idea of what this part
 of the code approximately does.
 
 ### Main variables
@@ -36,8 +36,8 @@ So, a simple *3x3* `forest` with only healthy trees would look like:
      [1, 1, 1]
      [1, 1, 1]]
 
-The other main important variables are; `config`, which is the dictionary that contains all of the
-settings configuring the simulation, and `screen`, which is the variable representing the screen
+The other main important variables are  `config` and `screen`. Respectively, these are the dictionary that contains all of the
+settings configuring the simulation, and the variable representing the screen
 on which the simulation will be shown.
 
 With these variables explained, we can take a look at the two most important *Pygame* functions
@@ -81,7 +81,7 @@ should be enough to be able to start the simulation and observe the first result
 This function should initialize an empty forest (i.e. a forest containing only empty cells). The
 argument `config` is the main configuration dictionary, which contains all the settings for the
 simulation. For this function, the only relevant settings are `grid_height` and `grid_width`,
-which define the size of the forest grid to be created. You can change these settings in the 
+which define the size of the forest grid to be created. You can change these settings in the
 `config` dictionary definition at the very end of the file, before the call to the main function.
 
 This function should return a list of lists, where the inner lists are each `grid_width` long,
@@ -92,34 +92,34 @@ for the empty cell, which is stored in the variable `no_tree` at the start of th
 ### `simulate(forest, config)`
 
 Next you'll write part of the simulate function to start growing the trees. For this you'll need
-the same `grid_height` and `grid_width` from the `config` dictionary, along the `spawn_prob`.
+the same `grid_height` and `grid_width` from the `config` dictionary, along with `spawn_prob`.
 This is the probability that any empty cell will randomly grow a new tree. Your code should loop
 over all the cells in the grid, and change the empty cells to become trees with probability
 `spawn_prob`, otherwise they remain empty. Cells that already contain trees should remain the
 same.
 
 ***Note:*** At the start of the function a variable `new_forest` is made, that will always start
-completely empty. You should use this variable to store the updated forest, and **not** the 
-original `forest`. The reason for this will be become more clear after part 3, where you'll
+completely empty. You should use this variable to store the updated forest, and **not** the
+original `forest`. The reason for this will be become clearer after part 3, where you'll
 expand on this simulate function further. For now, just make sure to add any existing or newly
 spawned trees into this `new_forest`, which is returned at the end of the function.
 
-### Run simuation and experiment
+### Run simulation and experiment
 
 Run the simulation and observe the results. Does everything work as expected and without errors?
-Try changing the `grid_height`, `grid_width`, and `spawn_prob` in the config dictionary. Do you 
+Try changing the `grid_height`, `grid_width`, and `spawn_prob` in the config dictionary. Do you
 observe the expected changes?
 
 ## Part 2: Checking neighbours
 
 One of the most important parts of the simulation will be based on checking the surrounding cells
-for a tree. If any of the 8 surround cells is a `burning_tree`, then that tree should also start
+for a tree. If any of the 8 surrounding cells is a `burning_tree`, then that tree should also start
 burning. As this is one of the main functions of the simulation, we'll write and test it
 separately in this part, before adding it to the main simulation.
 
 ### `check_neighbours(row, col, forest, config)`
 
-This function should check all 8 possible neighbours for specific position `(row, col)` in the
+This function should check all 8 possible neighbours for a specific position `(row, col)` in the
 `forest` grid. If any of the 8 neighbours are a `burning_tree`, the function should return *True*,
 but if none of the neighbours are burning, the function should return *False*.
 
@@ -130,8 +130,7 @@ using the `config` dictionary.
 
 ### `read_forest(config, filename)`
 
-Next, write a function to read a forest from a simple text file. Here each row of the forest
-forest will be on a new line, and each cell will separated by a space. So a text file that looks
+Next, write a function to read a forest from a simple text file. Here each row of the forest will be on a new line, and each cell will be separated by a space. So a text file that looks
 like
 
     0 1 0
@@ -143,7 +142,7 @@ should be read into a forest list as
     [[0, 1, 0],
      [2, 1, 1],
      [2, 0, 1]]
-    
+
 The function should return this new forest list that was read from the file `filename`. It should
 also update the `grid_height` and `grid_width` in the `config` dictionary to match the dimensions
 of the forest that was just read from the file.
@@ -159,8 +158,8 @@ In the `config` dictionary defined at the end of the program, modify the setting
 
     [(1, 0), (0, 1), (1, 1), (2, 0), (0, 2)]
 
-This will be the list of coordinates on which to test your `check_neighbour()` function. Then,
-to load a forest from a file, you can use a additional command line argument when starting your
+This will be the list of coordinates on which to test your `check_neighbours()` function. Then,
+to load a forest from a file, you can use an additional command line argument when starting your
 program, like
 
     python forest_fire.py test_neighbour.txt
@@ -171,7 +170,7 @@ and the list of points in test list until all of you are sure the function works
 
 ## Part 3: Simulating a fire
 
-For the next part we'll be adding this `check_neighbour()` function to the simulation, and using
+For the next part we'll be adding this `check_neighbours()` function to the simulation, and using
 it to make sure that if a neighbour tree is burning, that tree will also catch fire.
 
 ### `simulate(forest, config)`
@@ -197,7 +196,7 @@ a list of points where the fire should start. Currently it contains
     [(24, 0), (25, 0), (26, 0)]
 
 which means that there are 3 coordinates at the center top of the screen where the fire should
-start. Complete the function by looping of all of the pairs of points in `fire_start` and changing
+start. Complete the function by looping over all of the pairs of points in `fire_start` and changing
 all these points in the grid to be `burning_tree`s instead.
 
 ### Some people just want to watch the forest burn
@@ -205,14 +204,14 @@ all these points in the grid to be `burning_tree`s instead.
 Now we can run our first real forest fire experiments. Start by making sure the
 `neighbour_test_list` is set to an empty list `[]` again, so the regular simulation is run instead
 of the neighbour test from the previous part. If you now start the simulation, you should observe
-two separate phase:
+two separate phases:
 
-1. First the trees are growing to fill in the empty spaces, which will be the same as in part 1. 
+1. First the trees are growing to fill in the empty spaces, which will be the same as in part 1.
 2. Then a fire should start on the top edge of the screen, which will spread to neighbouring trees
 
 There are several settings from the `config` dictionary you should tweak for this simulation
 
-* `spawn_prob`: The probability of a new tree growing in a empty space
+* `spawn_prob`: The probability of a new tree growing in an empty space
 * `growth_period`: The number of iterations the trees grow before the fire starts
 * `max_iterations`: The total number of iterations to simulate, including growth and fire phases
 
@@ -220,7 +219,7 @@ You should try and modify these parameters until you get a combination that look
 the forest burns about 70% of the simulations you run. There is one additional setting you might
 want to change, which is `growth_fps`. If you increase this number, the growth phase will simulate
 faster. This means you can have much longer growth period, without having to wait each time before
-the fire starts. Once you have a combination of settings all of you are happy with and feels like
+the fire starts. Once you have a combination of settings all of you are happy with and which feels like
 a somewhat realistic simulation, you can move on to the next step.
 
 ### Part 4: Scaling the simulation
@@ -232,7 +231,7 @@ survival of the forest.
 ### `check_forest(forest, config)`
 
 This function should loop over the entire grid, and count how many healthy trees there currently
-are. This can then be use to compute what part of the forest is currently burned. The ratio of
+are. This can then be used to compute what part of the forest is currently burned. The ratio of
 burned trees can be computed as
 
     1 - (tree_count / total_grid_size)
@@ -244,12 +243,12 @@ If this ratio is above the `burn_thres` set in the `config` dictionary, the func
 
 Modify the function `start_fire` to start at a random point on the grid, if the list `fire_start`
 in the `config` dictionary is empty. The function should select a random point on the grid, and
-set any trees in a *2x2* square starting at that point on fire. If the list `fire_start` in not
+set any trees in a *2x2* square starting at that point on fire. If the list `fire_start` is not
 an empty list, the function should work as before and start the fire at those points.
 
 ### Fire break design
 
-You can now test your code by running the simulation. When more than 80% of the trees has burned
+You can now test your code by running the simulation. When more than 80% of the trees have burned
 the simulation will now automatically stop and print a message informing you of the result. You
 can modify `burn_ratio` in the `config` dictionary to change this percentage. If you change the
 `fire_start` to an empty list `[]`, the start of the fire should now change randomly each
@@ -276,7 +275,6 @@ without adding any fire breaks) the forest does indeed burn most of the way in a
 If not, try to tweak the settings you found in part 3 to get closer to this number.
 
 Now, you can experiment with adding fire breaks of different designs, and seeing the impact on the
-surival percentage. You can create you own starting forest with fire breaks in different patterns;
+survival percentage. You can create your own starting forest with fire breaks in different patterns;
 the number 2 is the state you can use to add fire breaks in a file. Try to find the best fire break
 design!
-

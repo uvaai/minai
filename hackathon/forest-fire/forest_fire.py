@@ -40,7 +40,7 @@ def simulate(forest, config):
 
     # Make a new forest so that all cells are updated simultaneously.
     new_forest = create_forest(config)
-    
+
     # TODO: Part 1 and 3
 
     return new_forest
@@ -65,7 +65,7 @@ def check_neighbours(row, col, forest, config):
 def start_fire(forest, config):
     """
     This function should set some trees on fire, so the forest fire simulation
-    can actualy start. Which trees are ignited at the start can be configured
+    can actually start. Which trees are ignited at the start can be configured
     in the `fire_start` list.
     """
     # Define the 4 forest states
@@ -99,7 +99,7 @@ def start_screen(config):
     window_height = config['grid_height'] * config['cell_size']
 
     # Set up the Pygame window
-    pygame.init() 
+    pygame.init()
     screen = pygame.display.set_mode((window_width, window_height))
     pygame.display.set_caption("Forest Fire Simulation")
 
@@ -125,7 +125,7 @@ def draw(screen, forest, config):
     # Draw a rectangle for each cell in the grids
     for row in range(config['grid_height']):
         for col in range(config['grid_width']):
-            
+
             state = forest[row][col]
             color = colors[state]
 
@@ -148,9 +148,9 @@ def run_simulation(screen, forest, config):
     FPS rate.
     """
     clock = pygame.time.Clock()
-    
+
     for iteration in range(config['max_iterations']):
-        
+
         # Handle window events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -166,19 +166,19 @@ def run_simulation(screen, forest, config):
 
         # Redraw the forest
         draw(screen, forest, config)
-        
+
         # Control simulation speed
         if iteration < config['growth_period']:
             clock.tick(config['growth_fps'])
 
         else:
             clock.tick(config['burn_fps'])
-           
+
             # Check burned forest status
-            if check_forest(forest, config): 
+            if check_forest(forest, config):
                 print(f"More than {int(100*config['burn_thres'])}% of the forest burned!")
                 return True
-    
+
     print("The forest surived the fire!")
     return False
 
@@ -191,10 +191,10 @@ def test_neighbours(screen, forest, config):
     tested is shown as a static image on the screen.
     """
     clock = pygame.time.Clock()
-    
+
     for x, y in config['neighbour_test_list']:
         print(f"The cell at position ({x}, {y}) has", end=" ")
-        
+
         if check_neighbours(y, x, forest, config):
             print("at least one burning neighbour!")
         else:
@@ -202,7 +202,7 @@ def test_neighbours(screen, forest, config):
 
 
     for iteration in range(config['max_iterations']):
-        
+
         # Handle window events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -210,7 +210,7 @@ def test_neighbours(screen, forest, config):
 
         # Draw the forest
         draw(screen, forest, config)
-        
+
         # Control simulation speed
         clock.tick(config['growth_fps'])
 
@@ -244,7 +244,7 @@ def repeated_simulation(forest, config):
         if simulation_no_draw(new_forest, config):
             count += 1
 
-    print(f"Out of {reps} repeated experiments, in {count} cases most of the forest burned,", 
+    print(f"Out of {reps} repeated experiments, in {count} cases most of the forest burned,",
           f"which was {int(count / reps * 100)}% of cases")
 
 # ----------------------------
@@ -258,7 +258,7 @@ def main(config):
     # If a filename was supplied, read that forest from file
     if len(sys.argv) == 2:
         forest = read_forest(config, sys.argv[1])
-    
+
     # Otherwise, create an empty forest
     else:
         forest = create_forest(config)
@@ -267,14 +267,14 @@ def main(config):
     # If testing neighbours for some cells, rescale the cells and start test
     if len(config['neighbour_test_list']) > 0:
         config['cell_size'] = 100
-        
+
         screen = start_screen(config)
         test_neighbours(screen, forest, config)
 
     # If computing average over multiple runs, don't start the screen
     elif config['simulate_repeated_runs'] > 0:
         repeated_simulation(forest, config)
-    
+
     # Otherwise, run the main simulation loop
     else:
         screen = start_screen(config)
@@ -292,17 +292,16 @@ if __name__ == "__main__":
 
         'growth_fps': 10,
         'burn_fps': 10,
-        
+
         'growth_period': 50,
         'spawn_prob': 0.02,
         'max_iterations': 150,
 
         'fire_start': [(24,0), (25,0), (26,0)],
         'burn_thres': 0.8,
-        
+
         'neighbour_test_list': [],
         'simulate_repeated_runs': 0,
     }
 
     main(config)
-
