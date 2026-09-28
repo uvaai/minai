@@ -5,7 +5,7 @@ For this assignment you'll work on a simple simulation of forests growing and ca
 forest will be represented as a rectangular grid, where each cell will contain a live tree, a
 burning tree or an empty space. Empty spaces might grow new trees, and burning trees might cause
 neighbouring trees to catch fire. During the simulation you'll update the forest at each timestep
-to see the effect of these rules evolve. For the last part you'll investigate the effectiveness
+to see the effect of these rules. Finally, you'll investigate the effectiveness
 of different types of fire breaks on the survival of the forest.
 
 ## Part 0: Getting started
@@ -43,7 +43,7 @@ on which the simulation will be shown.
 With these variables explained, we can take a look at the two most important *Pygame* functions
 already provided in the code:
 
-### `draw(screen, forest, config)`
+    `draw(screen, forest, config)`
 
 This takes the current forest and draws it on the screen. Each cell in the forest grid is drawn
 as a rectangle, where trees become green, empty squares become black, and burning trees become
@@ -54,7 +54,7 @@ and examples, see the link [here](https://www.rapidtables.com/web/color/RGB_Colo
 By drawing each cell as a separate rectangle with its own color and position, eventually the
 entire forest will be drawn on the screen.
 
-### `run_simulation(screen, forest, config)`
+    `run_simulation(screen, forest, config)`
 
 This loops a total of `max_iterations` number of times to do the following:
 
