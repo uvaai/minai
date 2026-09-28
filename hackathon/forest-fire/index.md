@@ -43,7 +43,7 @@ on which the simulation will be shown.
 With these variables explained, we can take a look at the two most important *Pygame* functions
 already provided in the code:
 
-    `draw(screen, forest, config)`
+### `draw(screen, forest, config)`
 
 This takes the current forest and draws it on the screen. Each cell in the forest grid is drawn
 as a rectangle, where trees become green, empty squares become black, and burning trees become
@@ -54,7 +54,7 @@ and examples, see the link [here](https://www.rapidtables.com/web/color/RGB_Colo
 By drawing each cell as a separate rectangle with its own color and position, eventually the
 entire forest will be drawn on the screen.
 
-    `run_simulation(screen, forest, config)`
+### `run_simulation(screen, forest, config)`
 
 This loops a total of `max_iterations` number of times to do the following:
 
