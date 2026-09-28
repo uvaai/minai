@@ -236,7 +236,7 @@ burned trees can be computed as
 
     1 - (tree_count / total_grid_size)
 
-If this ratio is above the `burn_thres` set in the `config` dictionary, the function should return
+If this ratio is above the `burn_threshold` set in the `config` dictionary, the function should return
 *True*, and otherwise it should return *False*.
 
 ### `start_fire(forest, config)`
@@ -250,7 +250,7 @@ an empty list, the function should work as before and start the fire at those po
 
 You can now test your code by running the simulation. When more than 80% of the trees have burned
 the simulation will now automatically stop and print a message informing you of the result. You
-can modify `burn_ratio` in the `config` dictionary to change this percentage. If you change the
+can modify `burn_threshold` in the `config` dictionary to change this percentage. If you change the
 `fire_start` to an empty list `[]`, the start of the fire should now change randomly each
 simulation.
 
@@ -276,5 +276,5 @@ If not, try to tweak the settings you found in part 3 to get closer to this numb
 
 Now, you can experiment with adding fire breaks of different designs, and seeing the impact on the
 survival percentage. You can create your own starting forest with fire breaks in different patterns;
-the number 2 is the state you can use to add fire breaks in a file. Try to find the best fire break
+the number `3` is the state you can use to add fire breaks in a file. Try to find the best fire break
 design!
