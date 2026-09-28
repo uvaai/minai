@@ -185,9 +185,9 @@ def run_simulation(screen, forest, config):
 
 def test_neighbours(screen, forest, config):
     """
-    A separate simulation specifically to test the function check_neighbour().
+    A separate simulation specifically to test the function check_neighbours().
     It loops over all the point in the `neighbour_test_list` and prints the
-    results of check_neighbour() on the screen for each point. The forest being
+    results of check_neighbours() on the screen for each point. The forest being
     tested is shown as a static image on the screen.
     """
     clock = pygame.time.Clock()
