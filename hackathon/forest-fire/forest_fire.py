@@ -46,10 +46,10 @@ def simulate(forest, config):
     return new_forest
 
 
-def check_neighbours(row, col, forest, config):
+def check_burning_neighbours(row, col, forest, config):
     """
     This function should return True if any of the 8 neighbouring cells
-    for a tree at position (row, col) is burning.
+    for a tree at position (col, row) is burning.
     """
     # Define the 4 forest states
     no_tree, tree, burning_tree, fire_break = range(4)
@@ -75,7 +75,7 @@ def start_fire(forest, config):
 
     return forest
 
-def check_forest(forest, config):
+def check_mostly_burned(forest, config):
     """
     This function counts how many trees are left in the forest, to check if
     the majority of the forest has burned in the fire. The majority percentage
@@ -175,7 +175,7 @@ def run_simulation(screen, forest, config):
             clock.tick(config['burn_fps'])
 
             # Check burned forest status
-            if check_forest(forest, config):
+            if check_mostly_burned(forest, config):
                 print(f"More than {int(100*config['burn_thres'])}% of the forest burned!")
                 return True
 
@@ -185,17 +185,17 @@ def run_simulation(screen, forest, config):
 
 def test_neighbours(screen, forest, config):
     """
-    A separate simulation specifically to test the function check_neighbours().
-    It loops over all the point in the `neighbour_test_list` and prints the
-    results of check_neighbours() on the screen for each point. The forest being
-    tested is shown as a static image on the screen.
+    A separate simulation specifically to test the function check_burning_neighbours().
+    It loops over all the point in the `neighbour_test_list` and prints the results
+    of check_burning_neighbours() on the screen for each point. The forest being tested
+    is shown as a static image on the screen.
     """
     clock = pygame.time.Clock()
 
     for x, y in config['neighbour_test_list']:
         print(f"The cell at position ({x}, {y}) has", end=" ")
 
-        if check_neighbours(y, x, forest, config):
+        if check_burning_neighbours(y, x, forest, config):
             print("at least one burning neighbour!")
         else:
             print("no burning neighbours at all!")
@@ -226,7 +226,7 @@ def simulation_no_draw(forest, config):
         forest = simulate(forest, config)
 
         # Check burn status
-        if iteration > config['growth_period'] and check_forest(forest, config):
+        if iteration > config['growth_period'] and check_mostly_burned(forest, config):
             return True
 
     return False
@@ -286,7 +286,7 @@ def main(config):
 
 if __name__ == "__main__":
     config = {
-        'grid_width': 50,
+        'grid_width': 80,
         'grid_height': 40,
         'cell_size': 15,
 
@@ -297,7 +297,7 @@ if __name__ == "__main__":
         'spawn_prob': 0.02,
         'max_iterations': 150,
 
-        'fire_start': [(24,0), (25,0), (26,0)],
+        'fire_start': [(39,0), (40,0), (41,0)],
         'burn_thres': 0.8,
 
         'neighbour_test_list': [],
