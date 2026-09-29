@@ -43,7 +43,7 @@ representing the screen on which the simulation will be shown.
 With these variables explained, we can take a look at the two most important *Pygame* functions
 already provided in the code:
 
-### Inspect `draw(screen, forest, config)`
+### Inspect the function `draw(screen, forest, config)`
 
 This takes the current forest and draws it on the screen. Each cell in the forest grid is drawn
 as a rectangle, where trees become green, empty squares become black, and burning trees become
@@ -54,7 +54,7 @@ and examples, see the link [here](https://www.rapidtables.com/web/color/RGB_Colo
 By drawing each cell as a separate rectangle with its own color and position, eventually the
 entire forest will be drawn on the screen.
 
-### Inspect `run_simulation(screen, forest, config)`
+### Inspect the function `run_simulation(screen, forest, config)`
 
 This loops a total of `max_iterations` number of times to do the following:
 
@@ -76,7 +76,7 @@ both functions, before moving on to part 1.
 For this first part we'll only focus on growing the forest and drawing this on the screen. This
 should be enough to be able to start the simulation and observe the first results
 
-### Write `create_forest(config)`
+### Write the function `create_forest(config)`
 
 This function should initialize an empty forest (i.e. a forest containing only empty cells). The
 argument `config` is the main configuration dictionary, which contains all the settings for the
@@ -90,7 +90,7 @@ for the empty cell, which is stored in the variable `no_tree` at the start of th
 (all 4 state variables are defined at the start of each function). Start by writing this function
 before moving to the next step.
 
-### Write `simulate(forest, config)`
+### Write the function `simulate(forest, config)`
 
 Next, you'll write part of the simulate function to start growing the trees. This function takes
 the current `forest` as an argument, and it should return the newly updated forest after
@@ -125,7 +125,7 @@ for a tree. If any of the 8 surrounding cells is a `burning_tree`, then that tre
 burning. As this is one of the main functions of the simulation, we'll write and test it
 separately in this part, before adding it to the main simulation.
 
-### Write `read_forest(config, filename)`
+### Write the function `read_forest(config, filename)`
 
 First, write a function to read a forest from a simple text file. Here each row of the forest will
 be on a new line, and each cell will be separated by a space. So a text file that looks like
@@ -144,7 +144,7 @@ The function should return this new forest list that was read from the file `fil
 also update the `grid_height` and `grid_width` in the `config` dictionary to match the dimensions
 of the forest that was just read from the file.
 
-### Write `check_burning_neighbours(row, col, forest, config)`
+### Write the function `check_burning_neighbours(row, col, forest, config)`
 
 This function should check all 8 possible neighbours for a specific position `(col, row)` in the
 `forest` grid. If any of the 8 neighbours are a `burning_tree`, the function should return *True*,
@@ -181,7 +181,7 @@ file and the list of points in test list until all of you are sure the function 
 For the next part we'll be adding this `check_burning_neighbours()` function to the simulation,
 and using it to make sure that if a neighbour tree is burning, that tree will also catch fire.
 
-### Update `simulate(forest, config)`
+### Update the function `simulate(forest, config)`
 
 Currently this function only adds new trees to empty cells with probability `spawn_prob`, and
 cells that contained trees remained trees at the next step. Complete this function by adding the
@@ -195,7 +195,7 @@ following rules:
 and not update the existing `forest`. When you update you'd also change what neighbours would be
 on fire for the next cell to check, causing bugs in your simulation.
 
-### Write `start_fire(forest, config)`
+### Write the function `start_fire(forest, config)`
 
 Next we'll add some fire to our forest fire simulation, as we'll need a fire to start somewhere
 in the forest before it can spread. The `fire_start` setting in the `config` dictionary contains
@@ -236,7 +236,7 @@ For this final step, you'll add a check to see if most of the forest burned duri
 and then run repeated simulations to test the effect of different types of fire breaks on the
 survival of the forest.
 
-### Write `check_mostly_burned(forest, config)`
+### Write the function `check_mostly_burned(forest, config)`
 
 This function should loop over the entire grid, and count how many healthy trees there currently
 are. This can then be used to compute what part of the forest is currently burned. The ratio of
@@ -247,7 +247,7 @@ burned trees can be computed as
 If this ratio is above the `burn_threshold` set in the `config` dictionary, the function should return
 *True*, and otherwise it should return *False*.
 
-### Update `start_fire(forest, config)`
+### Update the function `start_fire(forest, config)`
 
 If the `fire_start` list in the `config` dictionary is empty, this function should now start the fire
 at a random point in the grid. The function should select a random point on the grid, and
