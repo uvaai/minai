@@ -184,8 +184,7 @@ following rules:
 * Fire breaks will always remain fire breaks at the next step (i.e. cannot catch fire)
 
 *Note:* This first rule is exactly why it is important to use the `new_forest` and for next step
-and not update the existing `forest`. When you update you'd also change what neighbours would be
-on fire for the next cell to check, causing bugs in your simulation.
+and not update the existing `forest`. When you'd update a tree in the existing forest to a burning tree, you'd also change what neighbours would be on fire for the next cell you are going to check, causing bugs in your simulation.
 
 ### `start_fire(forest, config)`
 
