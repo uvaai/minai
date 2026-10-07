@@ -231,3 +231,63 @@ Should output:
 
     Your current total is 272. Read Ulysses of 730 pages to complete your list.
     Your current total is 990. Read The Very Hungry Caterpillar of 22 pages to complete your list.
+
+### Penguin selection
+
+The file `penguins.txt` contains data about penguins observed in Antarctica. Each line contains information about one penguin. The values are separated by semicolons (`;`). The first line of the file is a header that contains the names of the columns:
+
+    island;bill_length_mm;flipper_length_mm;body_mass_g;sex;year;species
+
+Write a function `count_penguins(filename, species, minimum_mass)` that reads the file and counts how many penguins of the given `species` have a body mass of at least `minimum_mass` grams. Then, the function should return this count.
+
+For example:
+
+    number = count_penguins("penguins.txt", "Gentoo", 5000)
+    print(number)
+
+Returns:
+
+    X
+
+### Penguin statistics
+
+Using the same `penguins.txt` file, write a function `penguin_stats(filename, year)` that calculates statistics for the penguins observed in the given year.
+
+For each species, calculate:
+
+- the number of penguins
+- the average body mass
+- the longest flipper length
+
+The function should return a dictionary in which the species are the keys. The values should be dictionaries containing the calculated statistics.
+
+For example, the structure of the returned dictionary should look like this:
+
+    {
+        'Adelie': {
+            'count': ...,
+            'average_mass': ...,
+            'longest_flipper': ...
+        },
+        'Chinstrap': {
+            'count': ...,
+            'average_mass': ...,
+            'longest_flipper': ...
+        },
+        'Gentoo': {
+            'count': ...,
+            'average_mass': ...,
+            'longest_flipper': ...
+        }
+    }
+
+Only include penguins that were observed in the requested `year`.
+
+For example:
+
+    stats = penguin_stats("penguins.txt", 2009)
+    print(stats)
+
+Should return:
+
+    X
