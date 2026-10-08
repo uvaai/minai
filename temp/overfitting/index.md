@@ -2,12 +2,12 @@
 ## Normal equation bug
 
 De update voor de meest recente versie van *scikit-learn* heeft de implementatie van
-`LinearRegression()` behoorlijk aangepast, waardoor deze niet altijd meer normal equation gebruikt
-voor de oplossing van $$\mathb{\hat{w}}, \hat{b}$$. De reden hiervoor is niet heel belangrijk, maar
-het zorgt er helaas wel voor dat de resultaten van de module 5 notebook die gebruik maken van de
-functie `normal_fix(X, y)` niet altijd correct waren voor jullie.
+`LinearRegression()` behoorlijk aangepast, waardoor deze niet altijd meer de Normal equation
+gebruikt voor de oplossing van $$\mathbf{\hat{w}}, \hat{b}$$. De reden hiervoor is niet heel
+belangrijk, maar het zorgt er helaas wel voor dat de resultaten van de module 5 notebook die
+gebruik maken van de functie `normal_fix(X, y)` niet altijd correct waren bij jullie.
 
-Hieronder dus een belangrijke recificatie voor die module, die hopelijk ook helpt om een beter
+Hieronder dus een belangrijke rectificatie voor die module, die hopelijk helpt om een beter
 visueel beeld te krijgen van wat overfitting precies is:
 
 ### Assignment 10: Plotting the Normal fit
@@ -54,7 +54,7 @@ welke degrees een goed model maken dat ook generaliseert naar de validatie data.
 herkennen is erg nuttig voor heel veel verschillende machine learning modellen, niet alleen
 polynomial regression.
 
-### Optioneel: Verbeterde code
+### Optioneel: Werkende versie van `normal_fit(X, y)`
 
 Mocht je zelf willen experimenteren met de verbeterde Normal equation, dan kun je de definitie van
 `normal_fix(X, y)` in de notebook vervangen met de nieuwe `linalg` implementatie hieronder
@@ -69,6 +69,5 @@ Mocht je zelf willen experimenteren met de verbeterde Normal equation, dan kun j
 
 Deze versie heeft geen comments, want wat deze implementatie precies doet, is misschien wat meer
 detail dan nodig. Mocht je wel nog interesse hebben in de werking hiervan, dan kun je hier
-natuurlijk altijd nog in de les naar vragen.
-
+natuurlijk altijd in de les nog naar vragen.
 
