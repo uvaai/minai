@@ -37,8 +37,8 @@ Gegeven deze nieuwe plot, is het volgende stukje tekst uit de opdracht ook een s
 > of the underlying trend *between* these two points.**
 > 
 > This type of model is said to be overfitting. It is fitting the noise in the data and no longer
-> approximating the true function $g$. _You can detect overfitting by testing with data points you
-> didn't train on._
+> approximating the true function $$g$$. _You can detect overfitting by testing with data points
+> you didn't train on._
 
 ### Assignment 12: Model selection
 
