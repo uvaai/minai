@@ -14,8 +14,8 @@ visueel beeld te krijgen van wat overfitting precies is:
 
 Hier zit het grootste verschil, want de polynomial van degree 30 zou altijd *heel sterk* moeten
 overfitten. De degree daar is namelijk net zo groot als het totale aantal datapunten, dus het
-model zou hier veel te flexibel moeten zijn. Het resultaat zou er eigenlijk zoals hieronder uit
-horen te zien
+model zou hier veel te flexibel moeten zijn. Het resultaat zou er dus eigenlijk zoals hieronder
+uit horen te zien
 
 ![Overfitted polynomial function of degree 30](overfit1.png)
 
