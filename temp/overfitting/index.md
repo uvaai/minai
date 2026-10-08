@@ -50,11 +50,11 @@ een grotere gemiddelde validatie kost verwachten voor de hogere degrees, zoals h
 De plot hierboven zit nu dus ook heel dicht bij wat je theoretisch zou verwachten voor de
 vergelijking van de training en validatie kosten van verschillende versies van een model. De plot
 laat nu precies zien welke degrees een underfit opleveren, welke degrees een overfit opleveren, en
-welke degrees een goed model maken dat ook generaliseert naar de validatie data. Dit goed kunnen
-herkennen is erg nuttig voor heel veel verschillende machine learning modellen, niet alleen
-polynomial regression.
+welke degrees een passend model maken dat ook goed generaliseert naar de validatie data. Dit
+kunnen herkennen is erg nuttig voor heel veel verschillende machine learning modellen, niet alleen
+polynomial regression!
 
-### Optioneel: Werkende versie van `normal_fit(X, y)`
+### Optioneel: Correct werkende versie van de functie
 
 Mocht je zelf willen experimenteren met de verbeterde Normal equation, dan kun je de definitie van
 `normal_fix(X, y)` in de notebook vervangen met de nieuwe `linalg` implementatie hieronder
