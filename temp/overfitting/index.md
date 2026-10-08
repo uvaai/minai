@@ -3,7 +3,7 @@
 
 De update voor de meest recente versie van *scikit-learn* heeft de implementatie van
 `LinearRegression()` behoorlijk aangepast, waardoor deze niet altijd meer normal equation gebruikt
-voor de oplossing van $\mathb{\hat{w}}, \hat{b}$. De reden hiervoor is niet heel belangrijk, maar
+voor de oplossing van $$\mathb{\hat{w}}, \hat{b}$$. De reden hiervoor is niet heel belangrijk, maar
 het zorgt er helaas wel voor dat de resultaten van de module 5 notebook die gebruik maken van de
 functie `normal_fix(X, y)` niet altijd correct waren voor jullie.
 
@@ -22,7 +22,7 @@ horen te zien
 Gegeven deze nieuwe plot, is het volgende stukje tekst uit de opdracht ook een stuk logischer
 
 > Increasing the degree of the polynomial will always add more parameters to the model, as the
-> dimensions of $\mathbf{w}$ must also increase. More parameters means the model is more
+> dimensions of $$\mathbf{w}$$ must also increase. More parameters means the model is more
 > "flexible", as there are more values to change and create the *perfect fit*. This means, as
 > you increase the degree of the model, the cost on the training data will always decrease, and
 > the confidence bounds will always move closer together.
@@ -45,7 +45,7 @@ Gegeven deze nieuwe plot, is het volgende stukje tekst uit de opdracht ook een s
 Hier is het verschil wat minder groot, maar in de plot met *Underfitting vs. Overfitting* zou je
 een grotere gemiddelde validatie kost verwachten voor de hogere degrees, zoals hieronder
 
-![Underfitting vs. Overfitting with normal equation](../temp/overfit2.png)
+![Underfitting vs. Overfitting with normal equation](overfit2.png)
 
 De plot hierboven zit nu dus ook heel dicht bij wat je theoretisch zou verwachten voor de
 vergelijking van de training en validatie kosten van verschillende versies van een model. De plot
