@@ -194,8 +194,6 @@ For example:
     number = count_penguins("penguins.txt", "Gentoo", 5000)
     print(number)
 
-Do not import any libraries.
-
 ### Optional challenge: Finish the booklist
 
 Write a new function named `done_reading(books_page_count, read_books)`.
@@ -256,5 +254,3 @@ For example:
 
     stats = penguin_stats("penguins.txt", 2009)
     print(stats)
-
-Do not import any libraries.
