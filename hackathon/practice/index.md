@@ -194,6 +194,7 @@ For example:
     number = count_penguins("penguins.txt", "Gentoo", 5000)
     print(number)
 
+
 ### Optional challenge: Finish the booklist
 
 Write a new function named `done_reading(books_page_count, read_books)`.
@@ -215,6 +216,7 @@ Should output:
 
     Your current total is 272. Read Ulysses of 730 pages to complete your list.
     Your current total is 990. Read The Very Hungry Caterpillar of 22 pages to complete your list.
+
 
 ### Optional challenge: Penguin statistics
 
