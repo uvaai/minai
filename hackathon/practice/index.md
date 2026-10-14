@@ -207,7 +207,7 @@ Should output:
 
 ### 1. Penguin selection
 
-The file [`penguins.txt`](/data/penguins.txt) contains data about penguins observed in Antarctica. Each line contains information about one penguin. The values are separated by semicolons (`;`). The first line of the file is a header that contains the names of the columns:
+The file [`penguins.txt`](data/penguins.txt) contains data about penguins observed in Antarctica. Each line contains information about one penguin. The values are separated by semicolons (`;`). The first line of the file is a header that contains the names of the columns:
 
     island;bill_length_mm;flipper_length_mm;body_mass_g;sex;year;species
 
@@ -221,9 +221,9 @@ For example:
     print(number)
 
 
-### 2. Optional challenge: Penguin statistics 
+### 2. Optional challenge: Penguin statistics
 
-Using the same [`penguins.txt`](/data/penguins.txt) file as before, write a function `penguin_stats(filename, year)` that reads the file line by line and calculates statistics for the penguins observed in the given year.
+Using the same [`penguins.txt`](data/penguins.txt) file as before, write a function `penguin_stats(filename, year)` that reads the file line by line and calculates statistics for the penguins observed in the given year.
 
 For each species, calculate:
 
