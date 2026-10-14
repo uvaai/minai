@@ -1,4 +1,6 @@
-### Secret message (loops, strings, lists, conditionals)
+## Loops, strings and lists
+
+### 1. Secret message
 
 Write a function `find_secret_message(text)` that accepts a `text`, and finds all characters that directly follow the letter `'p'`. The function should return a list containing these characters.
 
@@ -14,7 +16,7 @@ Should print:
     The secret message is: ['o', 'h', 'a', 'n', 'a']
 
 
-### Palindrome Checker (strings, loops, conditionals)
+### 2. Palindrome Checker
 
 Write a Python function `is_palindrome(word)` that takes a string word as input and returns `True` if the word is a palindrome (reads the same forwards and backwards), and `False` otherwise.
 
@@ -40,7 +42,7 @@ Which should print:
     True
 
 
-### Repetition (strings, lists, loops, conditionals)
+### 3. Repetition
 
 The text `"a aa aa b"` has one sequence that is repeated in direct succession: `"aa"`. For this exercise, a sequence is a group of characters separated by spaces. A repetition occurs when a sequence is directly followed by the same sequence. Each repeated occurrence counts separately, so `"aa aa aa"` contains two repetitions.
 
@@ -66,8 +68,9 @@ Should output:
 
     2
 
+## Dictionaries, tuples and sets
 
-### Booklist (dictionaries, lists, loops)
+### 1. Booklist
 
 For school, you are required to read books from a prescribed booklist. Instead of asking you to read at least 5 books from that list, the teacher asks you to read at least 1000 pages. Of course, even though you are an eager student, you don't want to read way too much.
 
@@ -104,7 +107,7 @@ Should print:
     The books ['The Very Hungry Caterpillar', 'The Hobbit', 'Frankenstein', 'Lord of the Flies'] have 836 pages in total.
 
 
-### Grade calculator (dictionaries, tuples, loops, conditionals)
+### 2. Grade calculator
 
 A grading scale can be stored in a dictionary. The keys in the dictionary are tuples containing the lowest and highest score for a grade, and the values are the corresponding letter grades.
 
@@ -135,7 +138,7 @@ This should produce the output:
     No matching grade
 
 
-### Movie Ratings (dictionaries, lists, loops, nested data structures, calculations)
+### 3. Movie Ratings
 
 You are given a list of movie ratings, and you want to calculate statistics based on these ratings. Write a function called `calculate_movie_stats(ratings)` that takes a dictionary `ratings` as input, where the keys are movie names, and the values are lists of ratings for each movie.
 
@@ -178,24 +181,7 @@ It should output:
         }
     }
 
-
-### Penguin selection (files, strings, loops, conditionals)
-
-The file [`penguins.txt`](/data/penguins.txt) contains data about penguins observed in Antarctica. Each line contains information about one penguin. The values are separated by semicolons (`;`). The first line of the file is a header that contains the names of the columns:
-
-    island;bill_length_mm;flipper_length_mm;body_mass_g;sex;year;species
-
-Write a function `count_penguins(filename, species, minimum_mass)` that reads the file line by line and counts how many penguins of the given `species` have a body mass of at least `minimum_mass` grams.
-
-The function should return this count.
-
-For example:
-
-    number = count_penguins("penguins.txt", "Gentoo", 5000)
-    print(number)
-
-
-### Optional challenge: Finish the booklist (dictionaries, lists, loops, functions)
+### 4. Optional challenge: Finish the booklist
 
 Write a new function named `done_reading(books_page_count, read_books)`.
 
@@ -217,8 +203,25 @@ Should output:
     Your current total is 272. Read Ulysses of 730 pages to complete your list.
     Your current total is 990. Read The Very Hungry Caterpillar of 22 pages to complete your list.
 
+## File I/O
 
-### Optional challenge: Penguin statistics (files, dictionaries, loops)
+### 1. Penguin selection
+
+The file [`penguins.txt`](/data/penguins.txt) contains data about penguins observed in Antarctica. Each line contains information about one penguin. The values are separated by semicolons (`;`). The first line of the file is a header that contains the names of the columns:
+
+    island;bill_length_mm;flipper_length_mm;body_mass_g;sex;year;species
+
+Write a function `count_penguins(filename, species, minimum_mass)` that reads the file line by line and counts how many penguins of the given `species` have a body mass of at least `minimum_mass` grams.
+
+The function should return this count.
+
+For example:
+
+    number = count_penguins("penguins.txt", "Gentoo", 5000)
+    print(number)
+
+
+### 2. Optional challenge: Penguin statistics 
 
 Using the same [`penguins.txt`](/data/penguins.txt) file as before, write a function `penguin_stats(filename, year)` that reads the file line by line and calculates statistics for the penguins observed in the given year.
 
